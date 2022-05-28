@@ -1,0 +1,874 @@
+<!-- 
+
+page cherry bomb by amboise n.n
+
+IMPORTANT:
+
+    - i left as many notes as i thought necessary to avoid confussion, especially regarding the links on the pop up menu. so please read that part carefully.
+
+    - i wouldn't recommend changing sizes of any kind (only font size) so if you really want to do it i won't provide you help with it.
+
+    - responsiveness cannot be removed.
+
+    - make sure you follow the terms of use.
+    
+    - on this page credit can be moved according as how many tabs you use, just please be super nice with me and don't remove it and don't place it outside of the pop up menu either.
+
+
+-->
+<!DOCTYPE html>
+<head>
+
+<link rel="shortcut icon" href="{favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style type="text/css">
+
+/* your customization begins here customization */
+
+.hcontrols svg {
+    color:#bfd586; /* tumblr controls icon color */
+}
+
+::-webkit-scrollbar-thumb {
+    background:#bfd586; /* scrollbar color */
+}
+
+/* tooltips */
+
+#s-m-t-tooltip {
+    background-color:#bfd586;
+    border:1px solid #000000;
+    color:#ffffff;
+}
+
+/* body */
+
+body {
+    color:#ffffff;
+    font-size:13px;
+    font-family: 'Balsamiq Sans', cursive; /* font */
+    background:#bfd586;
+}
+
+/* container */
+
+section {
+    background:#a6b779;
+    /* you should only change the number between the parentheses */
+    box-shadow: 0 19px 38px rgba(0,0,0,0.05), 0 15px 12px rgba(0,0,0,0.05);
+}
+
+/* dotted line - please just change the color */
+
+h1 .line {
+    border-top:4px dotted #bfd586;
+}
+
+/* sidebar post */
+
+.post {
+    background:#A6B779;
+    background-image:url('/');
+}
+
+/* both name and pop up icon */
+
+.name {
+    color:; /* if you want it to be a different color than text */
+    background:#bfd586;
+}
+
+/* little border between text */
+
+.post li {
+    border-bottom:3px solid white;
+}
+
+/* first text on sidebar */
+
+li.bubble {
+    background:#bfd586;
+}
+
+/* your links */
+
+.side a {
+    color:#ffffff;
+    box-shadow:inset 0 -.4em 0 0 #bfd586;
+}
+
+/* your icon */
+
+.avatar {
+    border:8px solid;
+    border-color:white; /* only change the color of the border please */
+    background-color:#bfd586;
+    background-image:url('https://img.xatblog.net/image/MQG0SrYGrRy.jpg');
+}
+
+/* pop up */
+
+/* lightgbox - you should only change the number between the parentheses */
+
+nav {
+    background-color:rgb(166, 244, 234,.5);
+    background-image: radial-gradient(rgb(247, 244, 234, 1) 20%, transparent 0), radial-gradient(rgb(247, 244, 234, 1) 20%, transparent 0); /* polka dots */
+}
+
+nav .pop, .close {
+    color:; /* if you want the icon to be different than text color */
+    background:grey;
+    box-shadow: 0 19px 38px rgba(166,183,183,0.05), 0 15px 12px rgba(0,0,0,0.05);
+}
+
+/* pop up icons color */
+
+nav .pop svg {
+    color:; /* if you want the icon to be different than text color */
+    background:#a6b779;
+}
+
+nav .pop svg:hover {
+    color:white;
+    background:#bfd586;
+    transform:rotate(360deg); /* how much it rotates */
+}
+
+/* little dots at bottom of links */
+
+label.tab {
+    background:#ffffff;
+}
+
+.tabwrap {
+    height:240px; /* change this height to 205px only if you are NOT going to inlcude more than 9 links in your pop up, and already deleted both little dots div */ 
+}
+
+/* little dots when clicked */
+
+[type=radio]:checked + label {
+    background:gray;
+}
+
+/* your customization ends here */
+
+/* don't change anything from here on please, go straight to the html part by doing the following ctrl + f html begins here */
+
+iframe.tmblr-iframe {
+    z-index:25!important;
+    top:19px!important;
+    right:17.5px!important;
+    opacity:0;
+    padding-right:38px;
+    /* delete invert(1) from here */
+    filter:invert(1) contrast(150%);
+    -webkit-filter:invert(1) contrast(150%);
+    -o-filter:invert(1) contrast(150%);
+    -moz-filter:invert(1) contrast(150%);
+    -ms-filter:invert(1) contrast(150%);
+    /* to here if your blog has a dark background */
+    transform:scale(0.65);
+    transform-origin:100% 0;
+    -webkit-transform:scale(0.65);
+    -webkit-transform-origin:100% 0;
+    -o-transform:scale(0.65);
+    -o-transform-origin:100% 0;
+    -moz-transform:scale(0.65);
+    -moz-transform-origin:100% 0;
+    -ms-transform:scale(0.65);
+    -ms-transform-origin:100% 0;
+}
+
+iframe.tmblr-iframe:hover {
+    opacity:0.6!important;
+}
+
+.hcontrols {
+    position:fixed;
+    top:21px!important;
+    right:17.5px!important;
+    z-index:25;
+}
+
+.hcontrols svg {
+    width:14px;
+    height:14px;
+    padding:9px;
+}
+
+::-webkit-scrollbar {
+    width:.3em;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+    overflow:visible;
+    border-radius:4px;
+}
+
+#s-m-t-tooltip {
+    max-width:300px;
+    z-index:100;
+    margin:0 14px 0 12px;
+    padding:5px 10px 5px 10px;
+    border-radius:.9em;
+    font-size:12px;
+    text-transform:lowercase;
+    letter-spacing:1px;
+    line-height:16px;
+}
+
+body {
+    line-height:1.5em;
+    font-weight:400;
+    letter-spacing:.75px;
+    word-wrap:break-word;
+    text-align:left;
+    margin:0;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+b, strong {
+    font-weight:700;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+    transition:all .3s linear;    
+    -webkit-transition:all .3s linear;
+    -o-transition:all .3s linear;
+    -moz-transition:all .3s linear;      
+}
+ 
+a, a img {
+    cursor:pointer;
+}
+ 
+a:hover {
+    text-decoration:none;
+}
+ 
+img {
+    opacity:1;
+    border:0;
+    text-decoration:none;
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+section {
+    position:fixed;
+    top:50%;
+    width:55%;
+    height:80vh;
+    padding-bottom:25px;
+    left:50%;
+    transform:translate(-50%,-50%);
+    overflow:hidden;
+    border-radius:4em;
+}
+
+h1 {
+    text-align:center;
+    width:calc(90% - 30px);
+    margin:25px auto 25px auto;
+}
+
+h1 .line {
+    width:calc((50% / 3) * 1.5);
+}
+
+h1 .line.one {
+    float:left;
+    margin:8px -30px 0 30px;
+}
+
+h1 .line.two {
+    float:right;
+    margin:8px 30px 0 -30px;
+}
+
+.post {
+    padding:35px 15px 15px 15px;
+    width:calc(90% - 30px);
+    height:calc(90% - 90px);
+    margin:0 auto 0 auto;
+}
+
+.avatar {
+    width:150px;
+    height:150px;
+    overflow:hidden;
+    border-radius:2em;
+    background-size:cover;
+    float:left;
+    display:block;
+    margin:0px 40px 25px 25px;
+}
+
+.name {
+    font-size:14px;
+    text-align:left;
+    display:inline;
+    overflow:hidden;
+    border-radius:1em;
+    padding:10px;
+    position:absolute;
+    margin:170px 0 0 0;
+}
+
+.name.two {
+    margin-top:220px;
+    padding:10px 10px 5px 10px;
+}
+
+.name svg {
+    width:16px;
+    height:16px;
+}
+
+.post .side {
+    margin:0 30px 0 195px;
+    max-height:calc(100% - 25px);
+    padding-right:25px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.post p:last-of-type {
+    margin-bottom:0;
+}
+
+.post li {
+    list-style-type:none;
+    padding:10px;
+}
+
+li.bubble {
+    display:inline-block;
+    overflow:hidden;
+    border-radius:1em;
+    padding:15px;
+}
+
+.post li svg {
+    float:left;
+    margin-top:2px;
+    margin-right:10px;
+    width:14px;
+    height:14px;
+}
+
+.open {
+    cursor:pointer;
+    font-size:13px;
+}
+
+.close {
+    position:absolute;
+    top:25px;
+    right:25px;
+    width:15px;
+    height:15px;
+    padding:5px;
+    overflow:hidden;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.close svg {
+    width:15px;
+    height:15px;
+    margin:0;
+}
+
+nav {
+    position:fixed;
+    z-index:50;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    display:none;
+    background-size: 1em 1em;
+    background-position: 0 0, .5em .5em;
+    overflow-x:hidden!important;
+}
+
+nav .pop {
+    padding:25px 25px 40px 25px;
+    width:17.5%;
+    height:auto;
+    min-height:100px;
+    overflow:hidden;
+    border-radius:4em;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+nav .pop h1 {
+    font-size:14px;
+}
+
+nav .pop h1 .line {
+    width:calc((50% / 4) * 1.5);
+}
+
+nav .pop h1 .line.one {
+    float:left;
+    margin:8px -10px 0 10px;
+}
+
+nav .pop h1 .line.two {
+    float:right;
+    margin:8px 10px 0 -10px;
+}
+
+nav .pop ul {
+    position:relative;
+    width:calc(100% - 50px);
+    margin:auto;
+    padding:0 0 0 2vw;
+    list-style-type:none;
+}
+
+nav .pop li {
+    margin:0 0 1vh 0;
+    padding:0;
+    width:calc(100% / 3);
+    float:left;
+    display:inline-block;
+}
+
+nav .pop svg {
+    width:16px;
+    height:16px;
+    padding:15px;
+    border-radius:1em;
+    overflow:hidden;
+    transition:.75s ease-in;
+}
+
+input.tab {
+	opacity:0;
+}
+
+label.tab {
+	position:absolute;
+	bottom:50px;
+	left:50%;
+	transform:translate(-50%,0);
+	z-index:100;
+	float:left;
+	overflow:hidden;
+	cursor:pointer;
+	width:9px;
+	height:9px;
+    border-radius:50%;
+}
+
+label.tab1 {
+    margin-left:-12.5px;
+}
+
+label.tab2 {
+    margin-left:12.5px;
+}
+
+.tabwrap {
+    overflow:hidden;
+    width:100%;
+    margin-top:-15px;
+}
+
+.tabs {
+	display:table;
+	width:100%;
+	white-space:nowrap;
+	clear:both;
+}
+
+.content {
+    position:absolute;
+	display:inline-block;
+	white-space:normal;
+	width:100%;
+}
+
+.content1, .content2 {
+    margin-left:-1vw;
+}
+    
+.tab[type=radio] ~ .tabs .content .content-inner {
+	opacity:0;
+	position:absolute;
+	right:-100%;
+	width:100%;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition:    all 0.6s ease;
+	-ms-transition:     all 0.6s ease;
+	-o-transition:      all 0.6s ease;
+	transition:      all 0.6s ease;
+}
+
+.tab1[type=radio]:checked ~ .tabs .content1 .content-inner,
+.tab2[type=radio]:checked ~ .tabs .content2 .content-inner {
+    opacity:1;
+    position:absolute;
+    right:0;
+    width:100%;
+}
+
+/* queries - don't touch please n.n */
+
+@media only screen and (max-width:1100px) {
+    section {
+        width:75%;
+    }
+    
+    .avatar {
+        width:25%;
+        height:0;
+        padding-bottom:25%;
+    }
+    
+    .name {
+        margin:25% 0 0 0;
+    }
+    
+    .name.two {
+        margin-top:calc(25% + 50px);
+    }
+    
+    nav .pop {
+        width:25%;
+    }
+    
+    nav .pop ul {
+        padding-left:2.5vw;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    iframe.tmblr-iframe, .hcontrols {display:none!important;}
+    
+    .name {
+        margin:0 0 0 calc(25% + 30px);
+    }
+    
+    .name.two {
+        margin-top:50px;
+    }
+    
+    .post {
+        width:calc(100% - 90px);
+        height:calc(90% - 90px);
+    }
+    
+    .post .side {
+        margin:calc(25% + 50px) 30px 0 30px;
+        max-height:calc(100% - (25% + 100px));
+    }
+    
+    nav .pop {
+        width:35%;
+    }
+    
+    nav .pop ul {
+        margin-left:2.6vw;
+    }
+}
+
+@media only screen and (max-width:540px) {
+    section {
+        width:95%;
+        height:calc(95% - 25px);
+    }
+    
+    .avatar {
+        width:80%;
+        height:0;
+        padding-bottom:80%;
+        margin:0px 7.5% 25px 7.5%;
+    }
+    
+    .name {
+        position:relative;
+        display:inline-block;
+        margin:-10px 0 0 10px;
+    }
+    
+    .name.two {
+        margin-top:10px;
+    }
+    
+    .post {
+        width:calc(100% - 90px);
+        max-height:100%;
+        overflow-x:hidden;
+        overflow-y:scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .post .side {
+        margin:calc(25% + 50px) 7.5% 50px 7.5%;
+        width:calc(80% + 20px);
+        height:100%;
+        overflow:visible;
+        padding-right:0!important;
+    }
+    
+    .post li:last-of-type {
+        margin-bottom:35px;
+    }
+    
+    nav .pop {
+        width:65%;
+    }
+    
+    nav .pop ul {
+        width:100%;
+        margin-left:2.5vw;
+    }
+}
+
+@media only screen and (min-width:1899px) {
+    nav .pop ul {
+        padding-left:2.75vw!important;
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    nav .pop ul {
+        padding-left:2.5vw;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    nav .pop ul {
+        margin-left:1.75vw;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<section>
+
+<!-- html begins here -->
+
+<title>chaii</title> <!-- window title -->
+
+<h1>
+    <div class="line one"></div>
+    
+        sailor scout chai<!-- this is your title -->
+    
+    <div class="line two"></div>
+</h1>
+
+<!-- post begins -->
+<div class="post">
+
+    <div class="avatar">
+    
+        <!-- ultra short and sweet name goes here -->
+        <div class="name">Chai</div>
+      
+         <div class="name two open">
+        
+            <i data-feather="star"></i><!-- pop up icon -->
+            
+        </div>
+        
+    </div>
+    
+    
+    <!-- sidebar -->
+    <div class="side">
+    
+    <!-- this text will stand out more -->
+    <li class="bubble">♌︎ - ♀ - Chicago,IL - ♡
+    
+    <!-- format is as follows, you can add as many as you like.
+    
+    <!-- with icon
+    <li><i data-feather="home"></i> icon goes first
+        you can write your text here
+    </li> -->
+    
+    <!-- without icon
+    <li>you can write your text here</li> -->
+    
+    <!-- to change an icon go here https://feathericons.com/ and replace the word map-pin in the following text <i data-feather="map-pin"> with the name of the icon you choose, please don't include any of these icons in between sentences or it will not look good -->
+    
+ 
+    
+    <li><i>Howdy!</i> Romance manga is my choice of drug w/ an ice tea. I don't really have much to say about myself. You can always find me at <a href="https://xat.com/AnimeandVamps">anime and vamps</a> and well <a href="https://discord.gg/Zrt5fq6tCY">discord</a> too. <i>message me anytime.</i></li>
+    
+    </div>
+    <!-- sidebar end -->
+    
+</div>
+<!-- post end -->
+
+</section>
+
+<!-- menu begins here-->
+    
+<nav>
+
+<div class="close">
+
+    <!-- close pop up icon-->
+    <i data-feather="x"></i>
+
+</div>
+
+<div class="pop">
+
+    <h1>
+        <div class="line one"></div>
+        
+            cuties<!-- pop up title -->
+            
+        <div class="line two"></div>
+    </h1>
+    
+    
+<!-- tabs -->
+
+<div class="tabwrap">
+    
+    <!-- 1IMPORTANT, PLEASE READ -->
+    
+    <!-- you only need this part if the number of links you want to add is larger than nine, if it's not please delete both divs marked as little dots. my advice would be to make use of both available tabs mainly for aesthetic purposes -->
+    
+	<input class="tab tab1" type="radio" checked id="tab1" name="tabs">
+	<!-- little dots begin -->
+	<label class="tab tab1" for="tab1"> <i></i> </label>
+	<!-- little dots end -->
+	<input class="tab tab2" type="radio" id="tab2" name="tabs">
+	<!-- little dots begin -->
+	<label class="tab tab2" for="tab2"> <i></i> </label>
+	<!-- little dots end -->
+		
+<div class="tabs">
+    
+    <ul class="links">
+    
+<!-- tab one begins -->
+
+<!-- please only include 9 links here, if you want to add more it should be done below where tab two begins -->
+<div class="content content1">
+	<div class="content-inner">
+	
+    <li><a href="https://xat.me/Isaac" title="papa"> <i data-feather="heart"></i> </a></li>
+    <li><a href="https://xat.me/xRaidSendo" title="raid"> <i data-feather="heart"></i> </a></li>
+    <li><a href="https://xat.me/lariatoooo" title="angel"> <i data-feather="heart"></i> </a></li> <li><a href="https://xat.me/Royalty" title="leia"> <i data-feather="heart"></i> </a></li><li><a href="https://xat.me/UnidentifiedAsh" title="Ash"> <i data-feather="heart"></i> </a></li>
+    
+    <!-- link format is as follows, again : please keep 9 links per tab
+    
+    <li>
+        <a href="your link" title="optional">
+            <i data-feather="name of icon">
+        </a>
+    </li>
+    
+    -->
+    
+    
+    </div>
+</div>
+<!-- tab one ends -->
+
+    
+<!-- tab two begins -->
+
+<!-- i'll just say it one more time, please keep the number of links to 9. keep in mind there won't be a tab three, this is the last one -->
+<div class="content content2">
+	<div class="content-inner tab-2">
+	
+	<!-- link format is as follows
+    
+    <li>
+        <a href="your link" title="optional">
+            <i data-feather="name of icon">
+        </a>
+    </li>
+    
+    -->
+    
+    <!-- please read the notes i left at the begginig of the code regarding the placement of the credit on this page-->
+    <li><a href="https://amboise.tumblr.com" title="credit"> <i data-feather="power"></i> </a></li>
+    
+    </div>
+</div>
+<!-- tab two ends -->
+    
+    </ul>
+    
+</div></div>
+
+</nav>
+
+<!-- pop up ends here -->
+
+<div class="hcontrols">
+
+    <!-- icon for tumblr controls -->
+    <i data-feather="more-vertical"></i>
+
+</div>
+
+<!-- customizable stuff ends here -->
+
+<!-- jquery - no need to touch -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script type="text/javascript" src="https://static.tumblr.com/cqvi50o/VSzox2ncv/style-my-tooltips.js"></script>
+
+<script>
+feather.replace()
+$(document).ready(function(){
+    $("[title]").style_my_tooltips({
+        tip_follows_cursor: true,
+        tip_delay_time: 100,
+        tip_fade_speed: 300
+    });
+    $('.open').click(function(){
+        $('nav').fadeIn('200');
+        $('body').addClass('overflow');
+    });
+    $('.close').click(function(event) {
+        $('nav').fadeOut('100');
+        $('body').removeClass('overflow');
+    });
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27) { // ESC
+          $('nav').hide();
+          $('body').removeClass('overflow');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
