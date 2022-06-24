@@ -1,874 +1,409 @@
+<!DOCTYPE html PUBLIC>
+
+<!-- @NUCLEARTHEMES ON TUMBLR || PLEASE DON'T DELETE CREDIT -->
+
 <!-- 
+|| CREDITS ||
 
-page cherry bomb by amboise n.n
+Chat speech bubbles made with Bubbly >> http://projects.verou.me/bubbly/
 
-IMPORTANT:
+Custom tooltips by Atomiks >> https://atomiks.github.io/tippyjs/
 
-    - i left as many notes as i thought necessary to avoid confussion, especially regarding the links on the pop up menu. so please read that part carefully.
+Fonts from Google >> https://fonts.google.com/
 
-    - i wouldn't recommend changing sizes of any kind (only font size) so if you really want to do it i won't provide you help with it.
-
-    - responsiveness cannot be removed.
-
-    - make sure you follow the terms of use.
-    
-    - on this page credit can be moved according as how many tabs you use, just please be super nice with me and don't remove it and don't place it outside of the pop up menu either.
-
+Placeholders from Unsplash >> https://unsplash.com/
 
 -->
-<!DOCTYPE html>
+
+<html>
+ 
 <head>
+ 
+<title>{Name} / title</title> <!-- page title -->
 
-<link rel="shortcut icon" href="{favicon}">
-<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<link rel="shortcut icon" href="{Favicon}">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave:400,400i,700,700i|Zilla+Slab:400,400i,700,700i|Josefin+Sans:400,400i,700,700i" rel="stylesheet">
 
-<!-- font -->
-
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <style type="text/css">
 
-/* your customization begins here customization */
+/* ----------------------------------------------------------------------- */
+/* ---------- CUSTOM TOOLTIPS ---------- */
 
-.hcontrols svg {
-    color:#ffe3e7; /* tumblr controls icon color */
+.tippy-tooltip.custom-theme {
+    background-color: #000000;
+    color: #f4f4f4;
+    font-family: inherit;
+    text-align: center;
 }
 
-::-webkit-scrollbar-thumb {
-    background:#ffffff; /* scrollbar color */
-}
+/* ----------------------------------------------------------------------- */
+/* ---------- CUSTOM SELECTION & SCROLLBAR ---------- */
 
-/* tooltips */
+::-moz-selection {background: #d26582; color: #f77748;}
+::selection {background: #d26582; color: #f77748;}
 
-#s-m-t-tooltip {
-    background-color:#d6808b;
-    border:1px solid #ffe3e7;
-    color:#ffe3e7;
-}
+::-webkit-scrollbar-thumb {background: #ffffff;border-radius:5px;}
+::-webkit-scrollbar {background: #f4f4f4; width: 7px;}
 
-/* body */
+* {margin:0; padding:0;}
+
+/* ----------------------------------------------------------------------- */
+/* ---------- BODY CSS ---------- */
 
 body {
-    color:#b63948;
-    font-size:13px;
-    font-family: 'Balsamiq Sans', cursive; /* font */
-    background:#d6808b;
+    background: #d26582;                /* background color */
+    color: #000000;                     /* text color */
+    font-family: 'Josefin Sans';        /* font */
+    font-size: 15px;                    /* font size */
+    text-align: justify;                /* text align */
 }
 
-/* container */
-
-section {
-    background:#EDA1AB;
-    /* you should only change the number between the parentheses */
-    box-shadow: 0 19px 38px rgba(0,0,0,0.22), 0 15px 12px rgba(0,0,0,0.22);
+#container {
+    background: #D26582;                /* container background color */
+    height: 600px;
+    left: 50%;
+    margin-bottom: 40px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 950px;
 }
 
-/* dotted line - please just change the color */
+/* ----------------------------------------------------------------------- */
+/* ---------- PAGE TITLE CSS ---------- */
 
-h1 .line {
-    border-top:4px dotted #ffffff;
+h1 {
+    background: 
+    -webkit-linear-gradient(right, #f77748, #fc4270);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    bottom: -2%;
+    
+    /* make this number smaller if the title doesn't fit! */
+    left: 18%;
+    /* you can even make it negative if you have to :P */
+    
+    font-family: 'Sedgwick Ave';
+    font-size: 70px;
+    position: fixed;
+    z-index: 999;
 }
 
-/* sidebar post */
+/* ----------------------------------------------------------------------- */
+/* ---------- TEXT CSS ---------- */
 
-.post {
-    background:#eda1ab;
-    background-image:url('https://img.xatblog.net/image/n1F3cJvVj.gif');
+h2 {                                    /* top title */
+    color: #f79383;
+    font-family: 'Zilla Slab';
+    font-size: 25px;
+    font-weight: normal;
+    text-align: right;
 }
 
-/* both name and pop up icon */
-
-.name {
-    color:#b63948; /* if you want it to be a different color than text */
-    background:#ffffff;
-}
-
-/* little border between text */
-
-.post li {
-    border-bottom:3px solid white;
-}
-
-/* first text on sidebar */
-
-li.bubble {
-    background:#D57F8A;
-}
-
-/* your links */
-
-.side a {
-    color:#ffffff;
-    box-shadow:inset 0 -.4em 0 0 #D57F8A;
-}
-
-/* your icon */
-
-.avatar {
-    border:8px solid;
-    border-color:white; /* only change the color of the border please */
-    background-color:#ffe3e7;
-    background-image:url('https://img.xatblog.net/image/ejX3ZCbJGYz.gif');
-}
-
-/* pop up */
-
-/* lightgbox - you should only change the number between the parentheses */
-
-nav {
-    background-color:rgb(213, 127, 138,.1);
-    background-image: radial-gradient(rgb(247, 244, 234, 1) 20%, transparent 0), radial-gradient(rgb(247, 244, 234, 1) 20%, transparent 0); /* polka dots */
-}
-
-nav .pop, .close {
-    color:#d57f8a; /* if you want the icon to be different than text color */
-    background:pink;
-    box-shadow: 0 19px 38px rgba(266,83,183,0.05), 0 15px 12px rgba(0,0,0,0.05);
-}
-
-/* pop up icons color */
-
-nav .pop svg {
-    color:#ffe3e7; /* if you want the icon to be different than text color */
-    background:#D57F8A;
-}
-
-nav .pop svg:hover {
-    color:white;
-    background:#f48491;
-    transform:rotate(360deg); /* how much it rotates */
-}
-
-/* little dots at bottom of links */
-
-label.tab {
-    background:#f78390;
-}
-
-.tabwrap {
-    height:240px; /* change this height to 205px only if you are NOT going to inlcude more than 9 links in your pop up, and already deleted both little dots div */ 
-}
-
-/* little dots when clicked */
-
-[type=radio]:checked + label {
-    background:white;
-}
-
-/* your customization ends here */
-
-/* don't change anything from here on please, go straight to the html part by doing the following ctrl + f html begins here */
-
-iframe.tmblr-iframe {
-    z-index:25!important;
-    top:19px!important;
-    right:17.5px!important;
-    opacity:0;
-    padding-right:38px;
-    /* delete invert(1) from here */
-    filter:invert(1) contrast(150%);
-    -webkit-filter:invert(1) contrast(150%);
-    -o-filter:invert(1) contrast(150%);
-    -moz-filter:invert(1) contrast(150%);
-    -ms-filter:invert(1) contrast(150%);
-    /* to here if your blog has a dark background */
-    transform:scale(0.65);
-    transform-origin:100% 0;
-    -webkit-transform:scale(0.65);
-    -webkit-transform-origin:100% 0;
-    -o-transform:scale(0.65);
-    -o-transform-origin:100% 0;
-    -moz-transform:scale(0.65);
-    -moz-transform-origin:100% 0;
-    -ms-transform:scale(0.65);
-    -ms-transform-origin:100% 0;
-}
-
-iframe.tmblr-iframe:hover {
-    opacity:0.6!important;
-}
-
-.hcontrols {
-    position:fixed;
-    top:21px!important;
-    right:17.5px!important;
-    z-index:25;
-}
-
-.hcontrols svg {
-    width:14px;
-    height:14px;
-    padding:9px;
-}
-
-::-webkit-scrollbar {
-    width:.3em;
-}
-
-::-webkit-scrollbar,
-::-webkit-scrollbar-thumb {
-    overflow:visible;
-    border-radius:4px;
-}
-
-#s-m-t-tooltip {
-    max-width:300px;
-    z-index:100;
-    margin:0 14px 0 12px;
-    padding:5px 10px 5px 10px;
-    border-radius:.9em;
-    font-size:12px;
-    text-transform:lowercase;
-    letter-spacing:1px;
-    line-height:16px;
-}
-
-body {
-    line-height:1.5em;
-    font-weight:400;
-    letter-spacing:.75px;
-    word-wrap:break-word;
-    text-align:left;
-    margin:0;
-    -moz-osx-font-smoothing:grayscale;
-    -webkit-font-smoothing:antialiased;
-    font-smoothing:antialiased;
-}
-
-b, strong {
-    font-weight:700;
+h3 {                                    /* bottom title */
+    color: #f79383;
+    font-family: 'Zilla Slab';
+    font-size: 25px;
+    font-weight: normal;
+    text-align: left;
 }
 
 a {
-    color:inherit;
-    text-decoration:none;
-    transition:all .3s linear;    
-    -webkit-transition:all .3s linear;
-    -o-transition:all .3s linear;
-    -moz-transition:all .3s linear;      
-}
- 
-a, a img {
-    cursor:pointer;
+    color: #ffb8a6;                     /* link color */
+    text-decoration: none;
 }
  
 a:hover {
-    text-decoration:none;
+    color: #f79383;                     /* link hover color */
+    transition: 0.4s;
 }
- 
+
+b {                                     /* bold text */
+    color: #f79383;
+}
+
+/* ----------------------------------------------------------------------- */
+/* ---------- CONTENT CSS ---------- */
+
 img {
-    opacity:1;
-    border:0;
-    text-decoration:none;
-    max-width:100%;
-    height:auto;
-    display:block;
+    float: left;
+    height: 600px;
+    width: 400px;
 }
 
-section {
-    position:fixed;
-    top:50%;
-    width:55%;
-    height:80vh;
-    padding-bottom:25px;
-    left:50%;
-    transform:translate(-50%,-50%);
-    overflow:hidden;
-    border-radius:4em;
+#upper {                                /* top section */
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    float: right;
+    height: 160px;
+    margin: 20px 20px 40px 20px;
+    padding: 20px;
+    position: relative;
+    width: 470px;
 }
 
-h1 {
-    text-align:center;
-    width:calc(90% - 30px);
-    margin:25px auto 25px auto;
+#upper:after {                          /* top section speech arrow */
+    border: 22px solid transparent;
+	border-top-color: #f4f4f4;
+	border-bottom: 0;
+	border-right: 0;
+    bottom: 0;
+    content: '';
+    height: 0;
+    left: 90%;
+    margin-bottom: -22px;
+    margin-left: -11px;
+	position: absolute;
+	width: 0;
 }
 
-h1 .line {
-    width:calc((50% / 3) * 1.5);
+#left {                                 /* left column */
+    border-right: 1px solid #ffb8a6;
+    float: left;
+    height: 125px;
+    line-height: 22px;
+    margin-right: 10px;
+    padding: 5px 15px 5px 5px;
+    text-transform: uppercase;
 }
 
-h1 .line.one {
-    float:left;
-    margin:8px -30px 0 30px;
+#right {                                /* right column */
+    float: left;
+    height: 125px;
+    line-height: 22px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 5px 15px 5px 5px;
+    text-transform: lowercase;
 }
 
-h1 .line.two {
-    float:right;
-    margin:8px 30px 0 -30px;
+#lower {                                /* bottom section */
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    float: right;
+    height: 160px;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    width: 470px;
 }
 
-.post {
-    padding:35px 15px 15px 15px;
-    width:calc(90% - 30px);
-    height:calc(90% - 90px);
-    margin:0 auto 0 auto;
+#lower:after {                          /* bottom section speech arrow */
+    border: 22px solid transparent;
+	border-top-color: #f4f4f4;
+	border-bottom: 0;
+	border-left: 0;
+    bottom: 0;
+    content: '';
+    height: 0;
+    left: 10%;
+    margin-bottom: -22px;
+    margin-left: -11px;
+	position: absolute;
+	width: 0;
 }
 
-.avatar {
-    width:150px;
-    height:150px;
-    overflow:hidden;
-    border-radius:2em;
-    background-size:cover;
-    float:left;
-    display:block;
-    margin:0px 40px 25px 25px;
+#text {                                 /* text in bottom section */
+    overflow-y: auto;
+    height: 120px;
+    margin-top: 10px;
+    padding-right: 10px;
 }
 
-.name {
-    font-size:14px;
-    text-align:left;
-    display:inline;
-    overflow:hidden;
-    border-radius:1em;
-    padding:10px;
-    position:absolute;
-    margin:170px 0 0 0;
+#linkcontainer {                        /* invisible container around links */
+    bottom: 0;
+    height: 45px;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    text-align: right;
 }
 
-.name.two {
-    margin-top:220px;
-    padding:10px 10px 5px 10px;
+.links {                                /* bottom links */
+    background-color: #ffb8a6;
+    border-radius: 5px;
+    color: #f4f4f4;
+    display: inline-block;
+    height: 25px;
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 25px;
 }
 
-.name svg {
-    width:16px;
-    height:16px;
+.links:hover {                          /* bottom links hover */
+    background-color: #f79383;
+    transition: 0.4s;
 }
 
-.post .side {
-    margin:0 30px 0 195px;
-    max-height:calc(100% - 25px);
-    padding-right:25px;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
+/* ----------------------------------------------------------------------- */
+/* ---------- CREDIT CSS ---------- */
+
+#credit {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    color: #ffb8a6;
+    bottom: 0;
+    display: inline;
+    margin: 15px;
+    padding: 10px;
+    position: fixed;
+    right: 0;
 }
 
-.post p:last-of-type {
-    margin-bottom:0;
-}
-
-.post li {
-    list-style-type:none;
-    padding:10px;
-}
-
-li.bubble {
-    display:inline-block;
-    overflow:hidden;
-    border-radius:1em;
-    padding:15px;
-}
-
-.post li svg {
-    float:left;
-    margin-top:2px;
-    margin-right:10px;
-    width:14px;
-    height:14px;
-}
-
-.open {
-    cursor:pointer;
-    font-size:13px;
-}
-
-.close {
-    position:absolute;
-    top:25px;
-    right:25px;
-    width:15px;
-    height:15px;
-    padding:5px;
-    overflow:hidden;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-.close svg {
-    width:15px;
-    height:15px;
-    margin:0;
-}
-
-nav {
-    position:fixed;
-    z-index:50;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    height:100%;
-    width:100%;
-    display:none;
-    background-size: 1em 1em;
-    background-position: 0 0, .5em .5em;
-    overflow-x:hidden!important;
-}
-
-nav .pop {
-    padding:25px 25px 40px 25px;
-    width:17.5%;
-    height:auto;
-    min-height:100px;
-    overflow:hidden;
-    border-radius:4em;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-
-nav .pop h1 {
-    font-size:14px;
-}
-
-nav .pop h1 .line {
-    width:calc((50% / 4) * 1.5);
-}
-
-nav .pop h1 .line.one {
-    float:left;
-    margin:8px -10px 0 10px;
-}
-
-nav .pop h1 .line.two {
-    float:right;
-    margin:8px 10px 0 -10px;
-}
-
-nav .pop ul {
-    position:relative;
-    width:calc(100% - 50px);
-    margin:auto;
-    padding:0 0 0 2vw;
-    list-style-type:none;
-}
-
-nav .pop li {
-    margin:0 0 1vh 0;
-    padding:0;
-    width:calc(100% / 3);
-    float:left;
-    display:inline-block;
-}
-
-nav .pop svg {
-    width:16px;
-    height:16px;
-    padding:15px;
-    border-radius:1em;
-    overflow:hidden;
-    transition:.75s ease-in;
-}
-
-input.tab {
-	opacity:0;
-}
-
-label.tab {
-	position:absolute;
-	bottom:50px;
-	left:50%;
-	transform:translate(-50%,0);
-	z-index:100;
-	float:left;
-	overflow:hidden;
-	cursor:pointer;
-	width:9px;
-	height:9px;
-    border-radius:50%;
-}
-
-label.tab1 {
-    margin-left:-12.5px;
-}
-
-label.tab2 {
-    margin-left:12.5px;
-}
-
-.tabwrap {
-    overflow:hidden;
-    width:100%;
-    margin-top:-15px;
-}
-
-.tabs {
-	display:table;
-	width:100%;
-	white-space:nowrap;
-	clear:both;
-}
-
-.content {
-    position:absolute;
-	display:inline-block;
-	white-space:normal;
-	width:100%;
-}
-
-.content1, .content2 {
-    margin-left:-1vw;
+#credit:hover {
+    background-color: #ffe6d9;
+    color: #f79383;
+    transition: 0.4s;
 }
     
-.tab[type=radio] ~ .tabs .content .content-inner {
-	opacity:0;
-	position:absolute;
-	right:-100%;
-	width:100%;
-	-webkit-transition: all 0.6s ease;
-	-moz-transition:    all 0.6s ease;
-	-ms-transition:     all 0.6s ease;
-	-o-transition:      all 0.6s ease;
-	transition:      all 0.6s ease;
-}
-
-.tab1[type=radio]:checked ~ .tabs .content1 .content-inner,
-.tab2[type=radio]:checked ~ .tabs .content2 .content-inner {
-    opacity:1;
-    position:absolute;
-    right:0;
-    width:100%;
-}
-
-/* queries - don't touch please n.n */
-
-@media only screen and (max-width:1100px) {
-    section {
-        width:75%;
-    }
-    
-    .avatar {
-        width:25%;
-        height:0;
-        padding-bottom:25%;
-    }
-    
-    .name {
-        margin:25% 0 0 0;
-    }
-    
-    .name.two {
-        margin-top:calc(25% + 50px);
-    }
-    
-    nav .pop {
-        width:25%;
-    }
-    
-    nav .pop ul {
-        padding-left:2.5vw;
-    }
-}
-
-@media only screen and (max-width:900px) {
-    iframe.tmblr-iframe, .hcontrols {display:none!important;}
-    
-    .name {
-        margin:0 0 0 calc(25% + 30px);
-    }
-    
-    .name.two {
-        margin-top:50px;
-    }
-    
-    .post {
-        width:calc(100% - 90px);
-        height:calc(90% - 90px);
-    }
-    
-    .post .side {
-        margin:calc(25% + 50px) 30px 0 30px;
-        max-height:calc(100% - (25% + 100px));
-    }
-    
-    nav .pop {
-        width:35%;
-    }
-    
-    nav .pop ul {
-        margin-left:2.6vw;
-    }
-}
-
-@media only screen and (max-width:540px) {
-    section {
-        width:95%;
-        height:calc(95% - 25px);
-    }
-    
-    .avatar {
-        width:80%;
-        height:0;
-        padding-bottom:80%;
-        margin:0px 7.5% 25px 7.5%;
-    }
-    
-    .name {
-        position:relative;
-        display:inline-block;
-        margin:-10px 0 0 10px;
-    }
-    
-    .name.two {
-        margin-top:10px;
-    }
-    
-    .post {
-        width:calc(100% - 90px);
-        max-height:100%;
-        overflow-x:hidden;
-        overflow-y:scroll;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .post .side {
-        margin:calc(25% + 50px) 7.5% 50px 7.5%;
-        width:calc(80% + 20px);
-        height:100%;
-        overflow:visible;
-        padding-right:0!important;
-    }
-    
-    .post li:last-of-type {
-        margin-bottom:35px;
-    }
-    
-    nav .pop {
-        width:65%;
-    }
-    
-    nav .pop ul {
-        width:100%;
-        margin-left:2.5vw;
-    }
-}
-
-@media only screen and (min-width:1899px) {
-    nav .pop ul {
-        padding-left:2.75vw!important;
-    }
-}
-
-@media only screen and (min-width:1400px) {
-    nav .pop ul {
-        padding-left:2.5vw;
-    }
-}
-
-@media only screen and (max-width:320px) {
-    nav .pop ul {
-        margin-left:1.75vw;
-    }
-}
-
 </style>
+    
 </head>
 
 <body>
-<section>
 
-<!-- html begins here -->
+<div id="container">
 
-<title>chaii</title> <!-- window title -->
-
-<h1>
-    <div class="line one"></div>
+    <h1>goodvibes</h1> <!-- main title -->
     
-       magical girl.png<!-- this is your title -->
+    <img src="https://img.xatblog.net/image/WvHEHyPhor.gif"> <!-- 400x600 -->
     
-    <div class="line two"></div>
-</h1>
+    <!-- start section 1 -->
 
-<!-- post begins -->
-<div class="post">
-
-    <div class="avatar">
-    
-        <!-- ultra short and sweet name goes here -->
-        <div class="name">Chai</div>
-      
-         <div class="name two open">
+    <div id="upper">
         
-            <i data-feather="star"></i><!-- pop up icon -->
+        <h2>about me</h2> <!-- section subtitle -->
+        
+        <div id="left">
+        
+            <i class="fa fa-arrow-right"></i> name
+            <br>
+            <i class="fa fa-arrow-right"></i> age
+            <br>
+            <i class="fa fa-arrow-right"></i> gender
+            <br>
+            <i class="fa fa-arrow-right"></i> pronouns
+            <br>
+            <i class="fa fa-arrow-right"></i> sexuality
+            <br>
+            <i class="fa fa-arrow-right"></i> zodiac
+        
+        </div>
+        
+        <div id="right">
+        
+            Chaii
+            <br>
+            twenty-five
+            <br>
+            female
+            <br>
+            she/her
+            <br>
+            uninterested 
+            <br>
+            	♌︎ - ♍︎ - ♈︎
+        
+        </div>
+        
+    </div>
+    
+    <!-- end section 1 -->
+    
+    <!-- start section 2 -->
+    
+    <div id="lower">
+        
+        <h3>𝑖𝑛 𝑡ℎ𝑒 𝑛𝑎𝑚𝑒 𝑜𝑓 𝑡ℎ𝑒 𝑚𝑜𝑜𝑛</h3> <!-- section subtitle -->
+        
+        <div id="text">
+
+How can I genuinally express to you that im emotionally drained. Find me <a href="https://xat.com/AnimeandVamps#/">here</a> and get to know me and my cuties. <b>PLEASE</b> be kind and I promise you things will be kawaii. I love anime, trying new food, and getting to learn more about others!
+
+<br><br>
+
+Let me know your music taste w/ a link to a song or hit me w/ your fave anime. I am very much down to hear something new. If i'm not quick to pc you back.. I may be working or sleeping. My heart's already tickled to know you're interested in my xatspace.  
+
+<br><br>
+
+"No matter how much you change, please don't forget the people who care for you." -sailormoon
+            
             
         </div>
         
     </div>
     
+    <!-- end section 2 -->
     
-    <!-- sidebar -->
-    <div class="side">
+    <!-- start bottom links -->
     
-    <!-- this text will stand out more -->
-    <li class="bubble">♌︎ - ♀ - Chicago,IL - ♡
+    <div id="linkcontainer">
     
-    <!-- format is as follows, you can add as many as you like.
-    
-    <!-- with icon
-    <li><i data-feather="home"></i> icon goes first
-        you can write your text here
-    </li> -->
-    
-    <!-- without icon
-    <li>you can write your text here</li> -->
-    
-    <!-- to change an icon go here https://feathericons.com/ and replace the word map-pin in the following text <i data-feather="map-pin"> with the name of the icon you choose, please don't include any of these icons in between sentences or it will not look good -->
-    
- 
-    
-    <li><i>What's up !</i> I am very flattered of you to view my profile. Clearly i'm a huge sailormoon fan, but i'm an anime/manga fan of various titles and kinds. There isn't a whole lot to say about myself, but i'd love to get to know you. I'm mostly a night owl and a heavy sleeper. You can always find me at <a href="https://xat.com/AnimeandVamps">anime and vamps</a> and i'd love for you to meet my cuties while you're there! <a href="https://discord.gg/Zrt5fq6tCY">discord</a> too. <i>message me anytime and click the star.</i></li>
-    
-    </div>
-    <!-- sidebar end -->
-    
-</div>
-<!-- post end -->
-
-</section>
-
-<!-- menu begins here-->
-    
-<nav>
-
-<div class="close">
-
-    <!-- close pop up icon-->
-    <i data-feather="x"></i>
-
-</div>
-
-<div class="pop">
-
-    <h1>
-        <div class="line one"></div>
+        <!--
+        url goes in "a href", leave it on "/" for homepage
+        tooltip content goes in "a title"
+        icon is determined by "fa fa-[icon name]"
+        -->
         
-            cuties<!-- pop up title -->
-            
-        <div class="line two"></div>
-    </h1>
-    
-    
-<!-- tabs -->
-
-<div class="tabwrap">
-    
-    <!-- 1IMPORTANT, PLEASE READ -->
-    
-    <!-- you only need this part if the number of links you want to add is larger than nine, if it's not please delete both divs marked as little dots. my advice would be to make use of both available tabs mainly for aesthetic purposes -->
-    
-	<input class="tab tab1" type="radio" checked id="tab1" name="tabs">
-	<!-- little dots begin -->
-	<label class="tab tab1" for="tab1"> <i></i> </label>
-	<!-- little dots end -->
-	<input class="tab tab2" type="radio" id="tab2" name="tabs">
-	<!-- little dots begin -->
-	<label class="tab tab2" for="tab2"> <i></i> </label>
-	<!-- little dots end -->
-		
-<div class="tabs">
-    
-    <ul class="links">
-    
-<!-- tab one begins -->
-
-<!-- please only include 9 links here, if you want to add more it should be done below where tab two begins -->
-<div class="content content1">
-	<div class="content-inner">
-	
-    <li><a href="https://xat.me/Isaac" title="papa"> <i data-feather="heart"></i> </a></li>
-    <li><a href="https://xat.me/xRaidSendo" title="raid"> <i data-feather="heart"></i> </a></li>
-    <li><a href="https://xat.me/lariatoooo" title="angel"> <i data-feather="heart"></i> </a></li> <li><a href="https://xat.me/Royalty" title="leia"> <i data-feather="heart"></i> </a></li><li><a href="https://xat.me/UnidentifiedAsh" title="Ash"> <i data-feather="heart"></i> </a></li>
-    
-    <!-- link format is as follows, again : please keep 9 links per tab
-    
-    <li>
-        <a href="your link" title="optional">
-            <i data-feather="name of icon">
+        <a href="https://xat.com/AnimeandVamps#/" title="home">
+            <div class="links">
+                <i class="fa fa-home" style="font-size:20px"></i>
+            </div>
         </a>
-    </li>
-    
-    -->
-    
-    
-    </div>
-</div>
-<!-- tab one ends -->
-
-    
-<!-- tab two begins -->
-
-<!-- i'll just say it one more time, please keep the number of links to 9. keep in mind there won't be a tab three, this is the last one -->
-<div class="content content2">
-	<div class="content-inner tab-2">
-	
-	<!-- link format is as follows
-    
-    <li>
-        <a href="your link" title="optional">
-            <i data-feather="name of icon">
+        
+        <a href="https://xat.me/Isaac" title="papa">
+            <div class="links">
+                <i class="fa fa-heart" style="font-size:20px"></i>
+            </div>
         </a>
-    </li>
-    
-    -->
-    
-    <!-- please read the notes i left at the begginig of the code regarding the placement of the credit on this page-->
-    <li><a href="https://amboise.tumblr.com" title="credit"> <i data-feather="power"></i> </a></li>
-    
+        
+        <a href="https://xat.me/xRaidSendo" title="raid">
+            <div class="links">
+                <i class="fa fa-moon-o" style="font-size:20px"></i>
+            </div>
+        </a>
+        
+        <a href="https://xat.me/YuukiNanase" title="nana">
+            <div class="links">
+                <i class="fa fa-moon-o" style="font-size:20px"></i>
+            </div>
+        </a>
+        
     </div>
-</div>
-<!-- tab two ends -->
     
-    </ul>
+    <!-- end bottom links -->
     
-</div></div>
-
-</nav>
-
-<!-- pop up ends here -->
-
-<div class="hcontrols">
-
-    <!-- icon for tumblr controls -->
-    <i data-feather="more-vertical"></i>
-
 </div>
 
-<!-- customizable stuff ends here -->
+<!-- don't edit beyond this point please! colors can be modified in <style> -->
 
-<!-- jquery - no need to touch -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script type="text/javascript" src="https://static.tumblr.com/cqvi50o/VSzox2ncv/style-my-tooltips.js"></script>
+<a id="credit" target="blank" href="https://nuclearthemes.tumblr.com/" title="by bones"><i class="fa fa-anchor" style="font-size:15px"></i></a>
+
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
 
 <script>
-feather.replace()
-$(document).ready(function(){
-    $("[title]").style_my_tooltips({
-        tip_follows_cursor: true,
-        tip_delay_time: 100,
-        tip_fade_speed: 300
-    });
-    $('.open').click(function(){
-        $('nav').fadeIn('200');
-        $('body').addClass('overflow');
-    });
-    $('.close').click(function(event) {
-        $('nav').fadeOut('100');
-        $('body').removeClass('overflow');
-    });
-    $(document).on('keydown', function(e) {
-        if (e.keyCode === 27) { // ESC
-          $('nav').hide();
-          $('body').removeClass('overflow');
-        }
-    });
-});
+        tippy('a[title]', {
+            theme: 'custom',
+            arrow: false,
+            delay: [120, 0],
+            zIndex: 9999999999,
+            maxWidth: 300,
+
+            content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+            },
+        });
 </script>
 
 </body>
+
 </html>
